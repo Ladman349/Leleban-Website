@@ -162,19 +162,32 @@
     border-bottom: 1px solid rgba(92,45,10,0.1);
   }
   nav img.nav-logo { height: 42px; object-fit: contain; z-index: 101; }
+  
   .nav-links { display: flex; gap: 28px; align-items: center; }
   .nav-links a { font-family: 'Righteous', cursive; font-size: 14px; color: var(--brown); text-decoration: none; letter-spacing: 0.04em; transition: color 0.2s, background 0.2s, transform 0.2s; }
   .nav-links a:hover { color: var(--ochre); }
-  .nav-links a.nav-franchise {
+  
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    z-index: 101;
+  }
+  
+  a.nav-franchise {
+    display: inline-block;
+    font-family: 'Righteous', cursive;
     background: var(--brown);
     color: var(--cream);
     padding: 6px 14px;
     border-radius: 16px;
     font-size: 13px;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: background 0.2s, transform 0.2s;
   }
-  .nav-links a.nav-franchise:hover {
+  a.nav-franchise:hover {
     background: var(--brown-light);
-    color: var(--cream);
     transform: translateY(-1px);
   }
   
@@ -232,12 +245,6 @@
       text-align: center;
       padding: 8px 0;
     }
-    .nav-links a.nav-franchise {
-      font-size: 16px;
-      padding: 10px 20px;
-      border-radius: 20px;
-      width: auto;
-    }
 
     /* Hamburger Animation to X */
     .menu-toggle.open span:nth-child(1) {
@@ -248,6 +255,27 @@
     }
     .menu-toggle.open span:nth-child(3) {
       transform: translateY(-8px) rotate(-45deg);
+    }
+  }
+
+  @media(max-width:480px) {
+    nav { padding: 10px 16px; }
+    nav img.nav-logo { height: 34px; }
+    .nav-right { gap: 10px; }
+    a.nav-franchise {
+      font-size: 11px;
+      padding: 5px 10px;
+      border-radius: 12px;
+    }
+    .menu-toggle {
+      width: 22px;
+      height: 16px;
+    }
+    .menu-toggle.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .menu-toggle.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
     }
   }
 
@@ -642,17 +670,19 @@
 <!-- NAV -->
 <nav>
   <img class="nav-logo" src="Le_laban_logo.jpg" alt="Le Laban" loading="lazy"/>
-  <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
   <div class="nav-links" id="nav-links">
     <a href="#menu">Menu</a>
     <a href="#about">Our Story</a>
     <a href="#reviews">Reviews</a>
     <a href="#contact">Find Us</a>
+  </div>
+  <div class="nav-right">
     <a href="javascript:void(0)" class="nav-franchise" onclick="openFranchiseModal()">Franchise Enquiry</a>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
 </nav>
 
