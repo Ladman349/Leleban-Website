@@ -379,7 +379,12 @@
 
   /* Regular small cards */
   .menu-reg-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:12px; max-width:1100px; margin:0 auto; }
-  @media(max-width:600px){ .menu-reg-grid { grid-template-columns:1fr 1fr; gap:10px; } }
+  @media(max-width:600px){
+    .menu-reg-grid { grid-template-columns:1fr 1fr; gap:10px; }
+  }
+  @media(max-width:480px){
+    .menu-reg-grid { grid-template-columns:1fr; gap:12px; }
+  }
 
   .menu-card {
     background:white; border-radius:14px; padding:16px 18px;
@@ -391,6 +396,30 @@
   .card-name { font-family:'Righteous',cursive; font-size:15px; color:var(--charcoal); }
   .card-price { font-family:'Righteous',cursive; font-size:17px; color:var(--brown); white-space:nowrap; }
   .card-price sup { font-size:10px; color:var(--ochre); }
+
+  .location-link {
+    font-family: 'Righteous', cursive;
+    font-size: 16px;
+    color: var(--brown);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+    transition: color 0.2s;
+  }
+  .menu-card:hover .location-link {
+    color: var(--ochre);
+  }
+  .location-status {
+    font-family: 'Righteous', cursive;
+    font-size: 14px;
+    color: rgba(10,35,66,0.45);
+    white-space: nowrap;
+  }
+  @media(max-width:600px){
+    .location-link { font-size: 14px; }
+    .location-status { font-size: 12px; }
+  }
 
   /* ── POPUP ── */
   .popup-overlay { position:fixed; inset:0; background:rgba(26,18,8,0.65); z-index:500; display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity .25s; backdrop-filter:blur(4px); }
@@ -739,10 +768,22 @@
   <h2 class="section-title reveal">Find Your Nearest Le Laban</h2>
   <p class="section-subtitle reveal">Anna Nagar, Egmore, Besant Nagar &amp; Velachery. More map links can be added anytime.</p>
   <div class="menu-reg-grid" style="max-width:1100px;margin:0 auto;">
-    <a class="menu-card reveal reveal-delay-1" href="https://share.google/1HsKJJS8VMrtpGUT3" target="_blank" style="text-decoration:none;"><div class="card-name">Anna Nagar</div><div class="card-price">View on Maps ↗</div></a>
-    <a class="menu-card reveal reveal-delay-2" href="https://share.google/OKyx0B8RzDGPod9Td" target="_blank" style="text-decoration:none;"><div class="card-name">Egmore</div><div class="card-price">View on Maps ↗</div></a>
-    <a class="menu-card reveal reveal-delay-3" href="https://share.google/pEZNjeOmglqW9u87x" target="_blank" style="text-decoration:none;"><div class="card-name">Besant Nagar</div><div class="card-price">View on Maps ↗</div></a>
-    <div class="menu-card reveal reveal-delay-4"><div class="card-name">Velachery</div><div class="card-price">Map link coming soon</div></div>
+    <a class="menu-card reveal reveal-delay-1" href="https://share.google/1HsKJJS8VMrtpGUT3" target="_blank" style="text-decoration:none;">
+      <div class="card-name">Anna Nagar</div>
+      <div class="location-link">View on Maps <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 2px; display: inline-block; vertical-align: middle;"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+    </a>
+    <a class="menu-card reveal reveal-delay-2" href="https://share.google/OKyx0B8RzDGPod9Td" target="_blank" style="text-decoration:none;">
+      <div class="card-name">Egmore</div>
+      <div class="location-link">View on Maps <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 2px; display: inline-block; vertical-align: middle;"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+    </a>
+    <a class="menu-card reveal reveal-delay-3" href="https://share.google/pEZNjeOmglqW9u87x" target="_blank" style="text-decoration:none;">
+      <div class="card-name">Besant Nagar</div>
+      <div class="location-link">View on Maps <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 2px; display: inline-block; vertical-align: middle;"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+    </a>
+    <div class="menu-card reveal reveal-delay-4">
+      <div class="card-name">Velachery</div>
+      <div class="location-status">Coming Soon</div>
+    </div>
   </div>
 </section>
 
