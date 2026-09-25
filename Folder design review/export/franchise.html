@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shrikhand&amp;family=Instrument+Sans:wght@400;500;600;700&amp;family=Lalezar&amp;display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing:border-box; }
+    html { overflow-x:hidden; scroll-behavior:smooth; -webkit-tap-highlight-color:transparent; }
+    html, body { margin:0; padding:0; background:#FBF5EA; color:#0A1B33; font-family:'Instrument Sans',system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+    a { color:#0B5FAE; text-decoration:none; } a:hover { color:#0A4C8C; }
+    ::selection { background:#0B5FAE; color:#FFFDF8; }
+    button { font:inherit; }
+    a:focus-visible, button:focus-visible { outline:2px solid #8EC3FF; outline-offset:3px; }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; } }
+  </style>
+</helmet>
+
+<div style="position:relative; width:100%; min-height:100vh; background:#FBF5EA; color:#0A1B33; font-family:'Instrument Sans',system-ui,sans-serif;">
+
+  <header data-screen-label="Header" style="position:fixed; top:0; left:0; right:0; z-index:200; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:10px 16px; background:{{ headerBg }}; border-bottom:1px solid {{ headerBorder }}; backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); transition:background .3s ease, border-color .3s ease;">
+    <a href="index.html" aria-label="Back to Le Laban home" style="display:flex; align-items:center; background:#FFFFFF; border-radius:14px; padding:4px 8px; box-shadow:0 2px 10px rgba(8,28,58,.12);">
+      <img src="assets/Le_laban_logo.jpg" alt="Le Laban" style="height:34px; width:auto; display:block; mix-blend-mode:multiply;">
+    </a>
+    <a href="index.html" style="display:flex; align-items:center; gap:8px; min-height:38px; padding:8px 14px; border-radius:999px; background:{{ chipBg }}; color:{{ chipColor }}; font-size:13px; font-weight:700; transition:background .3s ease, color .3s ease, transform .16s ease-out;" style-hover="color:{{ chipColor }};" style-active="transform:scale(0.95);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 19l-7-7 7-7"></path></svg>Home</a>
+  </header>
+
+  <!-- HERO -->
+  <section data-screen-label="Franchise hero" style="position:relative; overflow:hidden; background:#081C3A; color:#FFFDF8; padding:120px 20px 72px;">
+    <svg aria-hidden="true" viewBox="0 0 600 700" preserveAspectRatio="xMidYMid slice" fill="none" stroke="#8EC3FF" stroke-linecap="round" style="position:absolute; inset:0; width:100%; height:100%; opacity:.08; pointer-events:none;">
+      <path d="M-60 180 C 60 80, 170 270, 300 160 S 520 80, 660 210" stroke-width="44"></path>
+      <path d="M420 420 c -70 -90 50 -180 125 -120 c 55 44 8 124 -46 90 c -34 -22 -10 -70 24 -54" stroke-width="30"></path>
+    </svg>
+    <div style="position:relative; max-width:1180px; margin:0 auto; display:flex; flex-direction:column; gap:22px;">
+      <p data-reveal style="margin:0; font-size:12px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:#8EC3FF; opacity:0; transform:translateY(16px); transition:opacity .7s cubic-bezier(0.23,1,0.32,1), transform .7s cubic-bezier(0.23,1,0.32,1);">Franchise with Le Laban</p>
+      <h1 data-reveal style="margin:0; font-family:'Shrikhand',serif; font-weight:400; font-size:clamp(50px,13vw,120px); line-height:.94; max-width:900px; text-wrap:balance; opacity:0; transform:translateY(16px); transition:opacity .8s cubic-bezier(0.23,1,0.32,1), transform .8s cubic-bezier(0.23,1,0.32,1); transition-delay:80ms;">Bring the late-night cup to your city.</h1>
+      <p data-reveal style="margin:0; font-size:17px; line-height:1.6; color:rgba(255,253,248,.88); max-width:520px; text-wrap:pretty; opacity:0; transform:translateY(16px); transition:opacity .7s cubic-bezier(0.23,1,0.32,1), transform .7s cubic-bezier(0.23,1,0.32,1); transition-delay:160ms;">Le Laban grew from four college friends to five branches across Chennai. If you'd like to open the next one, we'd love to hear from you.</p>
+      <div data-reveal style="display:flex; flex-wrap:wrap; gap:10px; opacity:0; transform:translateY(16px); transition:opacity .7s cubic-bezier(0.23,1,0.32,1), transform .7s cubic-bezier(0.23,1,0.32,1); transition-delay:220ms;">
+        <a href="#enquire" style="display:inline-flex; align-items:center; gap:10px; min-height:52px; padding:14px 24px; border-radius:999px; background:#FFFDF8; color:#0B5FAE; font-weight:700; font-size:15px; transition:transform .16s ease-out;" style-hover="color:#0B5FAE;" style-active="transform:scale(0.97);">Send an enquiry <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"></path></svg></a>
+        <a href="tel:+918590582635" style="display:inline-flex; align-items:center; min-height:52px; padding:14px 22px; border-radius:999px; border:1.5px solid rgba(255,253,248,.45); color:#FFFDF8; font-weight:600; font-size:15px; transition:transform .16s ease-out;" style-hover="color:#FFFDF8; background:rgba(255,253,248,.08);" style-active="transform:scale(0.97);">Call +91 85905 82635</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FACTS -->
+  <section data-screen-label="Facts" style="background:#0B5FAE; color:#FFFDF8; padding:0 20px;">
+    <div style="max-width:1180px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));">
+      <sc-for list="{{ facts }}" as="f" hint-placeholder-count="3">
+        <div data-reveal style="padding:32px 4px; border-bottom:1px solid rgba(255,253,248,.18); display:flex; flex-direction:column; gap:6px; opacity:0; transform:translateY(16px); transition:opacity .7s cubic-bezier(0.23,1,0.32,1), transform .7s cubic-bezier(0.23,1,0.32,1); transition-delay:{{ f.delay }};">
+          <span data-count="{{ f.n }}" style="font-family:'Shrikhand',serif; font-size:clamp(56px,14vw,88px); line-height:1;">{{ f.display }}</span>
+          <span style="font-size:15px; color:rgba(255,253,248,.88);">{{ f.label }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section data-screen-label="Why" style="background:#FBF5EA; padding:88px 20px;">
+    <div style="max-width:1180px; margin:0 auto; display:flex; flex-direction:column; gap:32px;">
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <p data-reveal style="margin:0; font-size:12px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:#0B5FAE; opacity:0; transform:translateY(16px); transition:opacity .7s cubic-bezier(0.23,1,0.32,1), transform .7s cubic-bezier(0.23,1,0.32,1);">Why Le Laban</p>
+        <h2 data-reveal style="margin:0; font-family:'Shrikhand',serif; font-weight:400; font-size:clamp(40px,10vw,76px); line-height:.98; max-width:760px; text-wrap:balance; opacity:0; transform:translateY(16px); transition:opacity .7s cubic-bezier(0.23,1,0.32,1), transform .7s cubic-bezier(0.23,1,0.32,1); transition-delay:60ms;">A dessert brand built for the hours others close.</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:14px;">
+        <sc-for list="{{ reasons }}" as="r" hint-placeholder-count="3">
+          <div data-reveal style="display:flex; flex-direction:column; gap:16px; padding:24px; border-radius:28px; background:#FFFDF8; box-shadow:0 1px 0 rgba(10,27,51,.06); opacity:0; transform:translateY(16px); transition:opacity .7s cubic-bezier(0.23,1,0.32,1), transform .7s cubic-bezier(0.23,1,0.32,1); transition-delay:{{ r.delay }};">
+            <img src="{{ r.image }}" alt="" loading="lazy" style="width:88px; height:88px; object-fit:cover; display:block; border-radius:42% 42% 50% 50% / 24% 24% 76% 76%; background:#EFE6D6;">
+            <span style="font-family:'Shrikhand',serif; font-size:26px; line-height:1.1;">{{ r.title }}</span>
+            <span style="font-size:15px; line-height:1.6; color:#33445C;">{{ r.text }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEPS -->
+  <section data-screen-label="Steps" style="background:#EFE6D6; padding:88px 20px;">
+    <div style="max-width:1180px; margin:0 auto; display:flex; flex-wrap:wrap; gap:32px 64px;">
+      <div style="flex:1 1 280px; display:flex; flex-direction:column; gap:10px;">
+        <p data-reveal style="margin:0; font-size:12px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:#0B5FAE; opacity:0; transform:translateY(16px); transition:opacity .7s cubic-bezier(0.23,1,0.32,1), transform .7s cubic-bezier(0.23,1,0.32,1);">How it starts</p>
+        <h2 data-reveal style="margin:0; font-family:'Shrikhand',serif; font-weight:400; font-size:clamp(40px,10vw,76px); line-height:.98; opacity:0; transform:translateY(16px); transition:opacity .7s cubic-bezier(0.23,1,0.32,1), transform .7s cubic-bezier(0.23,1,0.32,1); transition-delay:60ms;">Three easy steps.</h2>
+      </div>
+      <ol style="flex:1.4 1 360px; min-width:0; list-style:none; margin:0; padding:0; display:flex; flex-direction:column;">
+        <sc-for list="{{ steps }}" as="st" hint-placeholder-count="3">
+          <li data-reveal style="display:grid; grid-template-columns:64px minmax(0,1fr); gap:16px; padding:22px 0; border-top:1.5px solid #0A1B33; opacity:0; transform:translateY(16px); transition:opacity .7s cubic-bezier(0.23,1,0.32,1), transform .7s cubic-bezier(0.23,1,0.32,1); transition-delay:{{ st.delay }};">
+            <span style="font-family:'Shrikhand',serif; font-size:44px; line-height:1; color:#0B5FAE;">{{ st.n }}</span>
+            <span style="display:flex; flex-direction:column; gap:6px;"><span style="font-weight:700; font-size:19px;">{{ st.title }}</span><span style="font-size:15px; line-height:1.6; color:#33445C;">{{ st.text }}</span></span>
+          </li>
+        </sc-for>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ENQUIRY -->
+  <section id="enquire" data-screen-label="Enquiry form" style="background:#FBF5EA; padding:88px 20px;">
+    <div style="max-width:880px; margin:0 auto; display:flex; flex-direction:column; gap:20px;">
+      <p data-reveal style="margin:0; font-size:12px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:#0B5FAE; opacity:0; transform:translateY(16px); transition:opacity .7s cubic-bezier(0.23,1,0.32,1), transform .7s cubic-bezier(0.23,1,0.32,1);">Enquiry</p>
+      <h2 data-reveal style="margin:0; font-family:'Shrikhand',serif; font-weight:400; font-size:clamp(40px,10vw,76px); line-height:.98; opacity:0; transform:translateY(16px); transition:opacity .7s cubic-bezier(0.23,1,0.32,1), transform .7s cubic-bezier(0.23,1,0.32,1); transition-delay:60ms;">Tell us about you.</h2>
+      <div data-reveal style="border-radius:28px; overflow:hidden; background:#FFFFFF; box-shadow:0 30px 60px -36px rgba(8,28,58,.45); border:1px solid rgba(10,27,51,.08); opacity:0; transform:translateY(16px); transition:opacity .7s cubic-bezier(0.23,1,0.32,1), transform .7s cubic-bezier(0.23,1,0.32,1); transition-delay:120ms;">
+        <iframe src="https://forms.cloud.microsoft/pages/responsepage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__gL3CfZUNE5RTFQ0Rk5HQjVGVlZORTZOR083V0c3UC4u&amp;route=shorturl&amp;embed=true" title="Franchise enquiry form" loading="lazy" style="width:100%; height:820px; border:none; display:block;"></iframe>
+      </div>
+      <a href="https://forms.cloud.microsoft/pages/responsepage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__gL3CfZUNE5RTFQ0Rk5HQjVGVlZORTZOR083V0c3UC4u&amp;route=shorturl" target="_blank" style="align-self:flex-start; display:inline-flex; align-items:center; gap:6px; min-height:44px; font-weight:700; font-size:15px; color:#0B5FAE;">Open the form in a new tab ↗</a>
+    </div>
+  </section>
+
+  <!-- COLLAB -->
+  <section data-screen-label="Collab" style="background:#0B5FAE; color:#FFFDF8; padding:80px 20px;">
+    <div style="max-width:1180px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; gap:24px;">
+      <div style="flex:1 1 320px; display:flex; flex-direction:column; gap:10px;">
+        <p style="margin:0; font-size:12px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:#8EC3FF;">Not a franchise?</p>
+        <h2 style="margin:0; font-family:'Shrikhand',serif; font-weight:400; font-size:clamp(36px,9vw,64px); line-height:1;">Creators, brands and events: let's collab.</h2>
+      </div>
+      <a href="https://forms.cloud.microsoft/r/FvjFf7Fqhx" target="_blank" style="display:inline-flex; align-items:center; gap:10px; min-height:56px; padding:14px 26px; border-radius:999px; background:#FFFDF8; color:#0B5FAE; font-weight:700; font-size:16px; transition:transform .16s ease-out;" style-hover="color:#0B5FAE;" style-active="transform:scale(0.97);">Collab with us <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"></path></svg></a>
+    </div>
+  </section>
+
+  <footer data-screen-label="Footer" style="background:#081C3A; color:#FFFDF8; padding:40px 20px 40px;">
+    <div style="max-width:1180px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:16px;">
+      <a href="index.html" style="font-family:'Shrikhand',serif; font-size:40px; color:#FFFDF8;" style-hover="color:#8EC3FF;">Le Laban</a>
+      <div style="display:flex; flex-wrap:wrap; gap:10px;">
+        <a href="https://wa.me/918590582635" target="_blank" style="display:inline-flex; align-items:center; min-height:44px; padding:10px 16px; border-radius:999px; border:1px solid rgba(255,253,248,.22); color:#FFFDF8; font-weight:600; font-size:14px;" style-hover="color:#FFFDF8; background:rgba(255,253,248,.08);">WhatsApp</a>
+        <a href="https://www.instagram.com/lelaban.ind/?hl=en" target="_blank" style="display:inline-flex; align-items:center; min-height:44px; padding:10px 16px; border-radius:999px; border:1px solid rgba(255,253,248,.22); color:#FFFDF8; font-weight:600; font-size:14px;" style-hover="color:#FFFDF8; background:rgba(255,253,248,.08);">@lelaban.ind</a>
+      </div>
+      <span style="width:100%; font-size:12.5px; color:rgba(255,253,248,.6);">© 2026 Le Laban. All rights reserved.</span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const M = 'assets/menu/';
+const FACTS = [
+  { n:5, suffix:'', label:'branches across Chennai' },
+  { n:11, suffix:' hrs', label:'open every day, 3 PM – 2 AM' },
+  { n:21, suffix:'', label:'desserts on the menu' },
+];
+const REASONS = [
+  { image:M+'de_paris.png', title:'Late-night demand', text:'We open at 3 PM and close at 2 AM, when most dessert places have already shut.' },
+  { image:M+'lotus_koshari.png', title:'A menu people return for', text:'Signature cups, Koushiri, Qashtuta and Salankatia, each with its own loyal fans.' },
+  { image:M+'3in1_salankatia.png', title:'A cup people photograph', text:'Our blue swirl cup is instantly recognisable, on the counter and on Instagram.' },
+];
+const STEPS = [
+  { title:'Send the enquiry', text:'Fill in the short form below with your details and preferred location.' },
+  { title:'We call you back', text:'Our team reaches out to talk through your city, space and plans.' },
+  { title:'Plan the next steps together', text:'If it’s a fit, we work out the details with you from there.' },
+];
+
+class Component extends DCLogic {
+  state = { scrolled:false, counted:false };
+  componentDidMount() {
+    this.reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.io = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.style.opacity = '1'; e.target.style.transform = 'none';
+      const c = e.target.querySelector('[data-count]');
+      if (c) this.countUp(c);
+      this.io.unobserve(e.target);
+    }), { threshold:0.15 });
+    this.observe();
+    this.onScroll = () => { const s = window.scrollY > 24; if (s !== this.state.scrolled) this.setState({ scrolled:s }); };
+    window.addEventListener('scroll', this.onScroll, { passive:true });
+  }
+  componentDidUpdate() { this.observe(); }
+  componentWillUnmount() { this.io?.disconnect(); window.removeEventListener('scroll', this.onScroll); }
+  observe() {
+    document.querySelectorAll('[data-reveal]:not([data-seen])').forEach(el => {
+      el.setAttribute('data-seen', '1');
+      if (this.reduced) { el.style.opacity = '1'; el.style.transform = 'none'; } else this.io.observe(el);
+    });
+  }
+  countUp(el) {
+    const target = +el.dataset.count, suffix = FACTS.find(f => f.n === target)?.suffix ?? '';
+    if (this.reduced) return;
+    const start = performance.now(), dur = 1100;
+    const step = now => {
+      const p = Math.min(1, (now - start) / dur), e = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * e) + suffix;
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+  renderVals() {
+    const onHero = !this.state.scrolled;
+    return {
+      headerBg: onHero ? 'rgba(8,28,58,0)' : 'rgba(251,245,234,.9)',
+      headerBorder: onHero ? 'rgba(10,27,51,0)' : 'rgba(10,27,51,.08)',
+      chipBg: onHero ? 'rgba(255,253,248,.14)' : '#EFE6D6',
+      chipColor: onHero ? '#FFFDF8' : '#0A1B33',
+      facts: FACTS.map((f, i) => ({ ...f, display: f.n + f.suffix, delay: i * 80 + 'ms' })),
+      reasons: REASONS.map((r, i) => ({ ...r, delay: i * 80 + 'ms' })),
+      steps: STEPS.map((s, i) => ({ ...s, n: String(i + 1).padStart(2, '0'), delay: i * 80 + 'ms' })),
+    };
+  }
+}
+</script>
+</body>
+</html>
